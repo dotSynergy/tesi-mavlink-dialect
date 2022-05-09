@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>3</version>
+  <dialect>9</dialect>
+  <enums>
+    <enum name="ARDU_STATUS">
+      <entry value="1" name="STATUS_OK"/>
+      <entry value="2" name="STATUS_ERR"/>
+      <entry value="3" name="STATUS_WARN"/>
+    </enum>
+  </enums>
+  <messages>
+    <message id="12000" name="ARDU_TEMP">
+    	<description>Internal (onboard) temperature.</description>
+    	<field type="float" name="temp">Temperature with unit.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12001" name="ARDU_TEMP_EXT">
+    	<description>External temperature.</description>
+    	<field type="float" name="temp">Temperature with unit.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12002" name="ARDU_HUM">
+    	<description>Internal relative humidity.</description>
+    	<field type="float" name="hum">Humidity in percentage.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12003" name="ARDU_HUM_EXT">
+    	<description>External relative humidity.</description>
+    	<field type="float" name="hum">Humidity in percentage.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12004" name="ARDU_LIGHT">
+    	<description>Light value.</description>
+    	<field type="uint16_t" name="light">Photoresistor raw value.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12005" name="ARDU_AIR_PPM">
+    	<description>Air PPM value.</description>
+    	<field type="uint16_t" name="ppm">Parts per million suspended in air.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+    <message id="12006" name="ARDU_HEARTBEAT">
+      <description>Heartbeat from the arduino.</description>
+      <field type="uint8_t" name="status" enum="ARDU_STATUS">Status.</field>
+      <field type="uint16_t" name="speed">Status.</field>
+      <field type="uint8_t" name="cnt">Counter</field>
+      <field type="uint8_t" name="target_system">System ID</field>
+      <field type="uint8_t" name="target_component">Component ID</field>
+    </message>
+  </messages>
+</mavlink>
